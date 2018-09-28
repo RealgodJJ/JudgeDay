@@ -5,7 +5,7 @@
     version: 1.0
     date: 2018/9/28
 """
-from _datetime import datetime
+from datetime import datetime
 
 
 def is_leap_year(year):
@@ -18,7 +18,7 @@ def is_leap_year(year):
 def main():
     input_date_str = input('请输入日期(yyyy/mm/dd)：\n')
     input_date = datetime.strptime(input_date_str, '%Y/%m/%d')
-    print(input_date)
+    # print(input_date)
 
     year = input_date.year
     month = input_date.month
