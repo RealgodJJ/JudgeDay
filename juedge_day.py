@@ -24,11 +24,23 @@ def main():
     month = input_date.month
     day = input_date.day
 
-    # 计算之前每月天数总和以及当前月份天数（假设为平年）
-    days_in_month_list = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-    if is_leap_year(year):
-        days_in_month_list[1] = 29
-    days = sum(days_in_month_list[: month - 1]) + day
+    # 包含30天的月份集合
+    _30_days_month_set = {4, 6, 9, 11}
+    _31_days_month_set = {1, 3, 5, 7, 8, 10, 12}
+    days = 0
+
+    for value in range(1, month):
+        if value in _30_days_month_set:
+            days += 30
+        elif value in _31_days_month_set:
+            days += 31
+        else:
+            days += 28
+
+    if is_leap_year(year) and month > 2:
+        days += 1
+
+    days += day
 
     print("这是{}年的第{}天".format(year, days))
 
