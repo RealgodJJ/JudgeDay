@@ -24,9 +24,9 @@ def main():
     month = input_date.month
     day = input_date.day
 
-    # 月份-天数 字典
     month_day_dict = {1: 31, 2: 28, 3: 31, 4: 30, 5: 31, 6: 30,
                       7: 31, 8: 31, 9: 30, 10: 31, 11: 30, 12: 31}
+    days = 0
 
     for value in range(1, month):
         days += month_day_dict[value]
