@@ -24,9 +24,6 @@ def main():
     month = input_date.month
     day = input_date.day
 
-    # month_day_dict = {1: 31, 2: 28, 3: 31, 4: 30, 5: 31, 6: 30,
-    #                   7: 31, 8: 31, 9: 30, 10: 31, 11: 30, 12: 31}
-
     day_month_dict = {28: {2},
                       30: {4, 6, 9, 11},
                       31: {1, 3, 5, 7, 8, 10, 12}}
