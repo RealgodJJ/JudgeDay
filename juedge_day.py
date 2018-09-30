@@ -24,18 +24,12 @@ def main():
     month = input_date.month
     day = input_date.day
 
-    # 包含30天的月份集合
-    _30_days_month_set = {4, 6, 9, 11}
-    _31_days_month_set = {1, 3, 5, 7, 8, 10, 12}
-    days = 0
+    # 月份-天数 字典
+    month_day_dict = {1: 31, 2: 28, 3: 31, 4: 30, 5: 31, 6: 30,
+                      7: 31, 8: 31, 9: 30, 10: 31, 11: 30, 12: 31}
 
     for value in range(1, month):
-        if value in _30_days_month_set:
-            days += 30
-        elif value in _31_days_month_set:
-            days += 31
-        else:
-            days += 28
+        days += month_day_dict[value]
 
     if is_leap_year(year) and month > 2:
         days += 1
